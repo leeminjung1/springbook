@@ -1,7 +1,9 @@
 package com.book.book.web;
 
 import com.book.book.service.posts.PostsService;
+import com.book.book.web.dto.PostsResponseDto;
 import com.book.book.web.dto.PostsSaveRequestDto;
+import com.book.book.web.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,4 +29,13 @@ public class PostsApiController {
     public PostsResponseDto findById (@PathVariable Long id) {
         return postsService.findById(id);
     }
+
+    // delete
+    @DeleteMapping("/api/v1/posts/{id}")
+    public Long delete(@PathVariable Long id) {
+        postsService.delete(id);
+        return id;
+    }
+
+
 }

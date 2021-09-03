@@ -1,4 +1,4 @@
-package com.book.book.web;
+package com.book.book.web.dto;
 
 import lombok.Builder;
 import lombok.Getter;

@@ -1,20 +1,21 @@
-package com.book.book.web;
+package com.book.book.web.dto;
 
 import com.book.book.domain.posts.Posts;
 import lombok.Getter;
 
+import java.time.LocalDateTime;
+
 @Getter
-public class PostsResponseDto {
+public class PostsListResponseDto {
     private Long id;
     private String title;
-    private String content;
     private String author;
+    private LocalDateTime modifiedDate;
 
-    // Entity의 일부만 사용하므로 생성자로 Entity를 받아서 값을 넣음
-    public PostsResponseDto(Posts entity) {
+    public PostsListResponseDto(Posts entity) {
         this.id = entity.getId();
         this.title = entity.getTitle();
-        this.content = entity.getContent();
         this.author = entity.getAuthor();
+        this.modifiedDate = entity.getModifiedDate();
     }
 }
